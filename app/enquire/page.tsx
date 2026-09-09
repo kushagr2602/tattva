@@ -58,6 +58,14 @@ export default function Enquire() {
     window.location.href = `https://wa.me/${site.whatsapp}?text=${text}`;
   }
 
+  // Skip the form: open a casual chat, still carrying the item if they came from one.
+  function justChat() {
+    const parts = [`Hi ${site.brand} 🌸`, "", "I'm still deciding, could we chat about gifting options?"];
+    if (item.trim()) parts.push("", `I was looking at: ${item.trim()}`);
+    if (productUrl) parts.push(productUrl);
+    window.location.href = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(parts.join("\n"))}`;
+  }
+
   return (
     <>
       <section className="page-head on-dark">
@@ -130,6 +138,13 @@ export default function Enquire() {
             Prefer email? Write to <a href={`mailto:${site.email}`}>{site.email}</a>.
           </p>
         </form>
+
+        <div className="enquire-skip">
+          <span>Feeling lazy, or not sure of the details yet?</span>
+          <button type="button" className="btn btn-ghost btn-ghost-dark" onClick={justChat}>
+            Skip the form, just chat with us →
+          </button>
+        </div>
       </section>
     </>
   );
