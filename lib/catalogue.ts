@@ -7,11 +7,13 @@ import { site, about } from "./site";
 // and be forgiving about the extension (/products/x.jpg resolves to x.png/.jpeg/.webp).
 const PUBLIC_DIR = path.join(process.cwd(), "public");
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export function resolveImage(p: string): string {
   if (!p) return "";
-  const base = p.replace(/\.[^.]+$/, "");
-  for (const c of [p, ...[".jpg", ".jpeg", ".png", ".webp"].map((e) => base + e)]) {
-    if (fs.existsSync(path.join(PUBLIC_DIR, c))) return c;
+  const stem = p.replace(/\.[^.]+$/, "");
+  for (const c of [p, ...[".jpg", ".jpeg", ".png", ".webp"].map((e) => stem + e)]) {
+    if (fs.existsSync(path.join(PUBLIC_DIR, c))) return BASE + c; // prefix for the URL, not the fs lookup
   }
   return "";
 }
