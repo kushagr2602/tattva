@@ -39,11 +39,7 @@ export default function Enquire() {
       setErr("Please add your name and the occasion so we can help.");
       return;
     }
-    const lines = [
-      `Hello ${site.brand} 🌸`,
-      "",
-      "I'd like to make a gifting enquiry:",
-      "",
+    const details = [
       `👤  *Name:*  ${name.trim()}`,
       `🎊  *Occasion:*  ${occasion}`,
       item.trim() && `🎁  *Pieces I like:*  ${item.trim()}`,
@@ -52,12 +48,13 @@ export default function Enquire() {
       byDate && `📅  *Needed by:*  ${prettyDate(byDate)}`,
       `✍️  *Handwritten story card:*  ${storyCard ? "Yes, please" : "No"}`,
       notes.trim() && `📝  *Notes:*  ${notes.trim()}`,
-      productUrl && "",
-      productUrl && `🔗  ${productUrl}`,
-      "",
-      "Thank you! 🙏",
-    ].filter((l) => l !== false && l !== undefined);
-    const text = encodeURIComponent((lines as string[]).join("\n"));
+    ].filter((l): l is string => Boolean(l));
+
+    const parts = [`Hello ${site.brand} 🌸`, "", "I'd like to make a gifting enquiry:", "", details.join("\n")];
+    if (productUrl) parts.push("", `🔗  ${productUrl}`);
+    parts.push("", "Thank you! 🙏");
+
+    const text = encodeURIComponent(parts.join("\n"));
     window.location.href = `https://wa.me/${site.whatsapp}?text=${text}`;
   }
 
