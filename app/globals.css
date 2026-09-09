@@ -489,3 +489,34 @@ h1, h2, h3 {
 .wa-float:hover .wa-float-label { opacity: 1; margin-left: 10px; }
 @media (max-width: 620px) { .wa-float { right: 16px; bottom: 16px; height: 54px; width: 54px; padding: 0 12px; } }
 @media (prefers-reduced-motion: reduce) { .wa-float, .wa-float-label { transition: none; } }
+
+/* ================= mandala everywhere ================= */
+/* slowly rotating hero mandala */
+@keyframes mandala-spin { from { transform: translateY(-50%) rotate(0); } to { transform: translateY(-50%) rotate(360deg); } }
+.hero-bloom { animation: mandala-spin 150s linear infinite; }
+
+/* faint mandala watermarks on the light sections too */
+.catalogue, .about, .product, .related, .prose, .value-grid, .enquire-wrap, .contact, .ethos-teaser-light, .meaning-section {
+  position: relative; overflow: hidden;
+}
+.catalogue > *, .about > *, .product > *, .related > *, .prose > *, .value-grid > *,
+.enquire-wrap > *, .contact > *, .ethos-teaser-light > * { position: relative; z-index: 1; }
+
+.catalogue::after, .product::after, .prose::after, .enquire-wrap::after {
+  content: ""; position: absolute; right: -120px; top: -120px; width: 320px; height: 320px;
+  background: var(--mandala) center / contain no-repeat; opacity: 0.06; pointer-events: none; z-index: 0;
+}
+.about::after, .related::after, .value-grid::after, .contact::after, .ethos-teaser-light::after {
+  content: ""; position: absolute; left: -130px; bottom: -140px; width: 340px; height: 340px;
+  background: var(--mandala) center / contain no-repeat; opacity: 0.06; pointer-events: none; z-index: 0;
+}
+
+/* a small mandala medallion centred on the section-head divider */
+.section-head .rule { position: relative; overflow: visible; }
+.section-head .rule::after {
+  content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 26px; height: 26px; background: var(--mandala) center / contain no-repeat; opacity: 0.5;
+  background-color: var(--paper);
+}
+
+@media (prefers-reduced-motion: reduce) { .hero-bloom { animation: none; } }
