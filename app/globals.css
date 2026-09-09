@@ -117,8 +117,9 @@ h1, h2, h3 {
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 84px; }
 .brandlink { display: inline-flex; align-items: center; gap: 0.7rem; text-decoration: none; }
 .logo-img { height: 60px; width: auto; }
-.hero-logo { width: clamp(180px, 58%, 260px); height: auto; border-radius: 8px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.28); outline: 1px solid color-mix(in srgb, var(--brass) 40%, transparent); outline-offset: 6px; }
+.hero-logo { width: clamp(210px, 66%, 320px); height: auto; border-radius: 16px;
+  /* embossed / raised: light highlight top-left, deep shadow bottom-right */
+  box-shadow: -10px -10px 22px rgba(255,255,255,0.05), 12px 14px 34px rgba(0,0,0,0.55); }
 .brandmark { font-family: var(--font-cormorant), serif; font-size: 1.55rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oxblood); text-decoration: none; }
 .on-dark .brandmark, .footer .brandmark { color: var(--paper); }
 .nav { display: flex; gap: 1.75rem; }
@@ -143,12 +144,8 @@ h1, h2, h3 {
 .hero-sub { max-width: 46ch; font-size: 1.05rem; color: color-mix(in srgb, var(--paper) 82%, transparent); }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 1.8rem; }
 .hero-note { margin-top: 1.1rem; font-size: 0.82rem; letter-spacing: 0.02em; color: color-mix(in srgb, var(--paper) 60%, transparent); }
-.hero-plate {
-  aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;
-  background: color-mix(in srgb, var(--oxblood-2) 70%, black); border-radius: 4px;
-}
-.hero-plate-word { font-family: var(--font-cormorant), serif; font-style: italic; letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.7rem; color: var(--brass-soft); }
-@media (max-width: 780px) { .hero-grid { grid-template-columns: 1fr; } .hero-plate { max-width: 260px; } }
+.hero-plate { display: flex; align-items: center; justify-content: center; }
+@media (max-width: 780px) { .hero-grid { grid-template-columns: 1fr; } .hero-plate { margin-top: 0.5rem; } }
 
 /* ---- occasions strip ---- */
 .strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; padding: 2.75rem 24px; }

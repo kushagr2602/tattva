@@ -49,9 +49,8 @@ export default function Home() {
             </div>
             <p className="hero-note">No fixed prices. Every order is quoted to the package.</p>
           </div>
-          <div className="hero-plate engraved" aria-hidden>
-            <Photo src={logo} alt="" width={210} height={210} className="hero-logo" fallback={<Motif />} />
-            <span className="hero-plate-word">{site.owner}</span>
+          <div className="hero-plate" aria-hidden>
+            <Photo src={logo} alt="" width={300} height={300} className="hero-logo" fallback={<Motif />} />
           </div>
         </div>
       </section>
