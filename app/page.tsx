@@ -129,6 +129,19 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ---- "remembered" statement ---- */}
+      <section className="remember on-dark reveal">
+        <div className="wrap">
+          <p className="eyebrow">Not just another gift</p>
+          <h2 className="remember-title">A gift they&apos;ll remember the occasion by.</h2>
+          <p className="remember-body">
+            A Tattva piece isn&apos;t unwrapped once and forgotten. Every time it comes out, at a
+            festival, a dinner or a puja, it brings back the day it was given, and the person who
+            gave it. That is what turns an object into a keepsake, and a keepsake into a story.
+          </p>
+        </div>
+      </section>
+
       {/* ---- featured ---- */}
       <section className="wrap catalogue">
         <div className="section-head reveal">
