@@ -566,3 +566,9 @@ h1, h2, h3 {
 .codes-table a { color: var(--ink); text-decoration: none; }
 .codes-table a:hover { color: var(--brass); }
 .codes-count { margin-top: 1rem; color: var(--ink-soft); font-size: 0.85rem; }
+
+/* footer brand block — surface the meaning, not repeat "story" */
+.footer-essence { color: color-mix(in srgb, var(--paper) 66%, transparent); font-size: 0.9rem; margin-top: 0.55rem; }
+.footer-essence .deva { color: var(--brass-soft); margin-right: 0.5rem; font-size: 1.1rem; }
+.footer-tagline { font-family: var(--font-cormorant), serif; font-style: italic; color: var(--brass-soft);
+  font-size: 1.2rem; line-height: 1.3; margin-top: 0.5rem; max-width: 26ch; }

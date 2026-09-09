@@ -5,9 +5,10 @@ export default function SiteFooter() {
   return (
     <footer className="footer on-dark">
       <div className="wrap footer-grid">
-        <div>
+        <div className="footer-brand">
           <span className="brandmark">{site.brand}</span>
-          <p className="footer-meta">{site.owner} · {site.tagline}</p>
+          <p className="footer-essence"><span className="deva">तत्त्व</span> the essence of a good gift</p>
+          <p className="footer-tagline">{site.tagline}</p>
         </div>
         <nav className="footer-nav" aria-label="Footer">
           {nav.map((n) => (
