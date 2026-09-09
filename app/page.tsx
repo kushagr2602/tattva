@@ -3,7 +3,7 @@ import { getProducts, getSiteImages } from "@/lib/catalogue";
 import { site, whatsappLink } from "@/lib/site";
 import Photo from "./components/Photo";
 import ProductCard from "./components/ProductCard";
-import { Toran, Motif } from "./components/decor";
+import { Toran, Motif, HeroBloom } from "./components/decor";
 
 const OCCASIONS = [
   "Weddings", "Anniversaries", "Housewarmings", "Diwali", "Rakhi",
@@ -21,17 +21,18 @@ export default function Home() {
   const products = getProducts();
   const { logo, heroBg } = getSiteImages();
   const featured = products.slice(0, 6);
-  // Hero backdrop: a real hero.jpg if added, otherwise a styled product photo.
-  const bg = heroBg || products.find((p) => p.id === "peacock-katori-set")?.image || featured[0]?.image || "";
+  // Optional: a real hero.jpg photo backdrop if the user drops one in /public.
+  const bg = heroBg;
 
   return (
     <>
       {/* ---- hero ---- */}
       <section
-        className="hero on-dark hero-photo"
+        className={`hero on-dark ${bg ? "hero-photo" : ""}`}
         style={bg ? { backgroundImage: `linear-gradient(105deg, rgba(15,42,32,0.93) 30%, rgba(15,42,32,0.5) 100%), url(${bg})` } : undefined}
       >
         <Toran />
+        {!bg && <HeroBloom />}
         <div className="wrap hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">Diwali · Weddings · Festive gifting</p>
