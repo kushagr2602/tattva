@@ -37,8 +37,11 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
 
       <article className="wrap product">
         <div className={`product-media engraved ${product.fit === "contain" ? "media-contain" : ""}`}>
-          <Photo src={product.image} alt={product.name} fill fit={product.fit}
-            fallback={<div className="plate" aria-hidden><Motif /></div>} />
+          {product.fit === "contain"
+            ? <Photo src={product.image} alt={product.name} block
+                fallback={<div className="plate" aria-hidden><Motif /></div>} />
+            : <Photo src={product.image} alt={product.name} fill
+                fallback={<div className="plate" aria-hidden><Motif /></div>} />}
         </div>
 
         <div className="product-info">
