@@ -13,6 +13,7 @@ export default function SiteFooter() {
           {nav.map((n) => (
             <Link key={n.href} href={n.href}>{n.label}</Link>
           ))}
+          <Link href="/codes">Item codes</Link>
         </nav>
         <div className="footer-contact">
           <a href={whatsappLink()} target="_blank" rel="noopener">WhatsApp</a>
