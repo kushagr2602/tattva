@@ -10,6 +10,15 @@ const OCCASIONS = [
   "Naming ceremonies", "Corporate gifting", "Family celebrations",
 ];
 
+const PROBLEMS: { problem: string; help: string }[] = [
+  { problem: "A long guest list and no time.", help: "Send us the count and the occasion. We build matching gifts for everyone, in one go." },
+  { problem: "Every gift feels generic.", help: "Handpicked pieces and a handwritten note from Manisha, so each one feels chosen, not bought." },
+  { problem: "Not sure what suits the occasion.", help: "Tell us the relationship and the moment, and we put together a shortlist for you." },
+  { problem: "A budget you don't want to overshoot.", help: "Options at every price. We quote to what works for you, with no pressure." },
+  { problem: "You need it by a certain date.", help: "Share the deadline and we'll confirm what we can get to you in time." },
+  { problem: "Tired of gifts that get thrown away.", help: "Silver that lasts for years and gets reused, not binned the next morning." },
+];
+
 const COLLECTIONS: { eyebrow: string; category: string; title: string; note: string }[] = [
   { eyebrow: "For weddings", category: "Wedding", title: "Wedding & Trousseau", note: "Shagun sets, return gifts and trousseau boxes." },
   { eyebrow: "For the mandir", category: "Pooja", title: "Pooja & Mandir", note: "Thalis, kalash and aarti pieces for daily prayer and festivals." },
@@ -96,6 +105,27 @@ export default function Home() {
               <span className="collection-link">View collection →</span>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* ---- how we help (problem -> solution) ---- */}
+      <section className="wrap help reveal">
+        <div className="section-head">
+          <p className="eyebrow">How we help</p>
+          <h2>Gifting, without the headache</h2>
+          <hr className="rule" />
+        </div>
+        <div className="help-grid">
+          {PROBLEMS.map((p) => (
+            <div key={p.problem} className="help-card">
+              <h3 className="help-problem">{p.problem}</h3>
+              <p className="help-text">{p.help}</p>
+            </div>
+          ))}
+        </div>
+        <div className="section-more">
+          <Link href="/enquire" className="btn btn-primary">Tell us your problem</Link>
+          <p className="reassure">Free to ask · No obligation · We usually reply within a few hours</p>
         </div>
       </section>
 
