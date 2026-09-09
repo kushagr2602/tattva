@@ -6,7 +6,8 @@
     "blurb": "A raised thali hung with tiny bells, complete with diya, kalash, bell and bowls, a full aarti in a single piece.",
     "reuse": "The centrepiece of every festival and puja, brought out year after year.",
     "image": "/products/pooja-thali-footed.jpg",
-    "fit": "contain"
+    "fit": "contain",
+    "code": "TTV-001"
   },
   {
     "id": "rose-pooja-thali",
@@ -15,7 +16,8 @@
     "blurb": "A scalloped thali with bell, incense burner, kumkum box and bowl, rose-engraved throughout.",
     "reuse": "Comes out for every prayer and returns to the mandir shelf between them.",
     "image": "/products/rose-pooja-thali.jpg",
-    "fit": "contain"
+    "fit": "contain",
+    "code": "TTV-002"
   },
   {
     "id": "elephant-pooja-thali",
@@ -24,7 +26,8 @@
     "blurb": "A thali flanked by cast elephant heads, with a matching bell and kalash.",
     "reuse": "Used at festivals, and sits as a decor piece on the console in between.",
     "image": "/products/elephant-pooja-thali.jpg",
-    "fit": "contain"
+    "fit": "contain",
+    "code": "TTV-003"
   },
   {
     "id": "boxed-pooja-thali-oval",
@@ -32,7 +35,8 @@
     "category": "Pooja",
     "blurb": "An oval thali with bell, kalash and plate, presented in a soft velvet gift box.",
     "reuse": "Kept and used at the mandir for years after.",
-    "image": "/products/boxed-pooja-thali-oval.jpg"
+    "image": "/products/boxed-pooja-thali-oval.jpg",
+    "code": "TTV-004"
   },
   {
     "id": "boxed-pooja-thali-grand",
@@ -41,7 +45,8 @@
     "blurb": "A full scalloped thali, incense shaker, kalash, lidded box and bowls, in a keepsake box.",
     "reuse": "Everything a home puja needs, brought out again and again.",
     "image": "/products/boxed-pooja-thali-grand.jpg",
-    "fit": "contain"
+    "fit": "contain",
+    "code": "TTV-005"
   },
   {
     "id": "peacock-dryfruit-platter",
@@ -50,7 +55,8 @@
     "blurb": "A two-part paisley platter with peacock handles, sized for an assortment of mewa.",
     "reuse": "Serves nuts and snacks at every gathering, long after Diwali.",
     "image": "/products/peacock-dryfruit-platter.jpg",
-    "fit": "contain"
+    "fit": "contain",
+    "code": "TTV-006"
   },
   {
     "id": "filigree-dryfruit-platter",
@@ -58,7 +64,8 @@
     "category": "Diwali",
     "blurb": "A wide lace-edged platter, wrapped and ready as a Diwali hamper of dry fruit.",
     "reuse": "A serving centrepiece for years of festivals and dinners.",
-    "image": "/products/filigree-dryfruit-platter.jpg"
+    "image": "/products/filigree-dryfruit-platter.jpg",
+    "code": "TTV-007"
   },
   {
     "id": "boxed-dryfruit-plate",
@@ -67,7 +74,8 @@
     "blurb": "A lace-edged plate with a flower bowl, boxed and ready to gift full of mewa.",
     "reuse": "Used as a dessert or dry-fruit plate for years after.",
     "image": "/products/boxed-dryfruit-plate.jpg",
-    "fit": "contain"
+    "fit": "contain",
+    "code": "TTV-008"
   },
   {
     "id": "heritage-gift-box",
@@ -76,7 +84,8 @@
     "blurb": "A large engraved box topped with Ganesh and peacocks, with a baraat scene around the sides. Arrives full and kept long after.",
     "reuse": "Kept as a family box for jewellery, letters and small keepsakes.",
     "image": "/products/heritage-gift-box.jpg",
-    "fit": "contain"
+    "fit": "contain",
+    "code": "TTV-009"
   },
   {
     "id": "laxmi-ganesh-set",
@@ -85,7 +94,8 @@
     "blurb": "Laxmi and Ganesh idols with a mirrored tray and photo frame, a complete shagun for weddings and housewarmings.",
     "reuse": "The idols stay on the mandir for good; the tray keeps hosting guests.",
     "image": "/products/laxmi-ganesh-set.jpg",
-    "fit": "contain"
+    "fit": "contain",
+    "code": "TTV-010"
   },
   {
     "id": "wedding-pooja-tray",
@@ -94,7 +104,8 @@
     "blurb": "A pierced-rail tray set with photo frame, Ganesh, bell, kalash and trinket boxes, one gift that covers the whole ceremony.",
     "reuse": "Each piece finds its own place in the new home.",
     "image": "/products/wedding-pooja-tray.jpg",
-    "fit": "contain"
+    "fit": "contain",
+    "code": "TTV-011"
   },
   {
     "id": "charger-plate",
@@ -102,7 +113,8 @@
     "category": "Wedding",
     "blurb": "A scalloped plate with a baraat engraved across it. Works as a charger, a fruit plate, or wall decor.",
     "reuse": "From wedding table to everyday charger to display piece.",
-    "image": "/products/charger-plate.jpg"
+    "image": "/products/charger-plate.jpg",
+    "code": "TTV-012"
   },
   {
     "id": "peacock-katori-set",
@@ -110,7 +122,8 @@
     "category": "Home & Table",
     "blurb": "A pair of lidded katoris crowned with peacocks, on a matching engraved tray, for serving mithai or dry fruit.",
     "reuse": "Everyday katoris for chutneys and sweets once the festival's over.",
-    "image": "/products/peacock-katori-set.jpg"
+    "image": "/products/peacock-katori-set.jpg",
+    "code": "TTV-013"
   },
   {
     "id": "rose-bowl-set",
@@ -118,7 +131,8 @@
     "category": "Home & Table",
     "blurb": "Two domed, rose-engraved bowls on a tray, for sindoor, sweets or trinkets.",
     "reuse": "Trinket or dry-fruit bowls that never leave the table.",
-    "image": "/products/rose-bowl-set.jpg"
+    "image": "/products/rose-bowl-set.jpg",
+    "code": "TTV-014"
   },
   {
     "id": "fruit-basket",
@@ -126,7 +140,8 @@
     "category": "Home & Table",
     "blurb": "A square lace basket with a leaf border, for fruit, flowers, or a styled gift.",
     "reuse": "A fruit bowl or centrepiece for the everyday, not just the occasion.",
-    "image": "/products/fruit-basket.jpg"
+    "image": "/products/fruit-basket.jpg",
+    "code": "TTV-015"
   },
   {
     "id": "boxed-kalash",
@@ -135,7 +150,8 @@
     "blurb": "A Laxmi-Ganesh kalash in a Tattva gift box, cushioned with roses.",
     "reuse": "Used at every puja and housewarming, and kept on the mandir.",
     "image": "/products/boxed-kalash.jpg",
-    "fit": "contain"
+    "fit": "contain",
+    "code": "TTV-016"
   },
   {
     "id": "candle-stand-set",
@@ -143,7 +159,8 @@
     "category": "Home & Table",
     "blurb": "A pair of candle stands on a round engraved tray, for tealights or pillar candles.",
     "reuse": "Lit at festivals and dinners, and left out as a centrepiece.",
-    "image": "/products/candle-stand-set.jpg"
+    "image": "/products/candle-stand-set.jpg",
+    "code": "TTV-017"
   },
   {
     "id": "peacock-bowl-box-set",
@@ -151,7 +168,8 @@
     "category": "Home & Table",
     "blurb": "A rectangular engraved tray with a peacock mukhwas bowl and a domed lidded box.",
     "reuse": "Serves mukhwas and sweets to guests, year round.",
-    "image": "/products/peacock-bowl-box-set.jpg"
+    "image": "/products/peacock-bowl-box-set.jpg",
+    "code": "TTV-018"
   },
   {
     "id": "festive-gifting-tray",
@@ -159,7 +177,8 @@
     "category": "Diwali",
     "blurb": "A round tray set with a dry-fruit bowl, a Ganesh idol and a candle stand.",
     "reuse": "The tray and idol stay out through the festival season and beyond.",
-    "image": "/products/festive-gifting-tray.jpg"
+    "image": "/products/festive-gifting-tray.jpg",
+    "code": "TTV-019"
   },
   {
     "id": "elephant-frame-set",
@@ -168,7 +187,8 @@
     "blurb": "A green-enamel elephant photo frame with a matching candle stand and mirror tray.",
     "reuse": "The frame holds a family photo for good; the tray hosts guests.",
     "image": "/products/elephant-frame-set.jpg",
-    "fit": "contain"
+    "fit": "contain",
+    "code": "TTV-020"
   },
   {
     "id": "footed-scalloped-bowl",
@@ -177,7 +197,8 @@
     "blurb": "A footed silver bowl with a scalloped rim and beaded scrollwork, boxed to gift.",
     "reuse": "A fruit or centrepiece bowl that stays on the table for years.",
     "image": "/products/footed-scalloped-bowl.jpg",
-    "fit": "contain"
+    "fit": "contain",
+    "code": "TTV-021"
   },
   {
     "id": "frame-brownie-hamper",
@@ -186,7 +207,8 @@
     "blurb": "A silver-plated photo frame paired with a box of treats, in a velvet gift box.",
     "reuse": "The frame keeps a photo long after the treats are gone.",
     "image": "/products/frame-brownie-hamper.jpg",
-    "fit": "contain"
+    "fit": "contain",
+    "code": "TTV-022"
   },
   {
     "id": "handled-basket",
@@ -195,6 +217,7 @@
     "blurb": "A filigree basket with a handle and a pierced rail, presented in a velvet box.",
     "reuse": "Holds fruit, snacks or flowers, and doubles as decor.",
     "image": "/products/handled-basket.jpg",
-    "fit": "contain"
+    "fit": "contain",
+    "code": "TTV-023"
   }
 ]

@@ -45,9 +45,17 @@ export default async function handler(req: any, res: any) {
     let id = base, n = 2;
     while (ids.has(id)) id = `${base}-${n++}`;
 
+    // next item code: TTV-### one past the highest existing
+    const maxNum = list.reduce((m: number, p: any) => {
+      const n = parseInt(String(p.code || "").replace(/[^0-9]/g, ""), 10);
+      return Number.isFinite(n) && n > m ? n : m;
+    }, 0);
+    const code = `TTV-${String(maxNum + 1).padStart(3, "0")}`;
+
     const imagePath = `/products/${id}.${ext}`;
     const entry: any = {
       id,
+      code,
       name: product.name,
       category: product.category,
       blurb: product.blurb || "",
@@ -78,7 +86,7 @@ export default async function handler(req: any, res: any) {
       return res.status(502).json({ error: "Could not update the product list.", detail: t.slice(0, 200) });
     }
 
-    return res.status(200).json({ ok: true, id, image: imagePath });
+    return res.status(200).json({ ok: true, id, code, image: imagePath });
   } catch (e: any) {
     return res.status(500).json({ error: String(e?.message || e) });
   }

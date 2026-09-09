@@ -549,3 +549,8 @@ h1, h2, h3 {
   border-left: 3px solid var(--brass); border-radius: 0 4px 4px 0; display: flex; flex-direction: column; gap: 0.9rem; align-items: flex-start; }
 .admin-done p { color: var(--ink); }
 @media (max-width: 720px) { .admin-grid { grid-template-columns: 1fr; } }
+
+/* item code chip next to the category */
+.card-code { font-style: normal; margin-left: 0.6rem; padding-left: 0.6rem;
+  border-left: 1px solid color-mix(in srgb, var(--brass) 50%, transparent);
+  color: var(--ink-soft); letter-spacing: 0.08em; }

@@ -6,6 +6,7 @@ export const categories: Category[] = ["Diwali", "Wedding", "Pooja", "Home & Tab
 
 export type Product = {
   id: string;
+  code: string; // item code / SKU, e.g. "TTV-014"
   name: string;
   category: Category;
   blurb: string;

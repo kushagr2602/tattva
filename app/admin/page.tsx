@@ -24,7 +24,7 @@ export default function Admin() {
   const [fields, setFields] = useState<Fields>(EMPTY);
   const [status, setStatus] = useState<"idle" | "analyzing" | "publishing" | "done">("idle");
   const [error, setError] = useState("");
-  const [publishedId, setPublishedId] = useState("");
+  const [publishedCode, setPublishedCode] = useState("");
 
   const set = (k: keyof Fields, v: string) => setFields((f) => ({ ...f, [k]: v }));
 
@@ -35,7 +35,7 @@ export default function Admin() {
     const dataUrl = await resize(file);
     setPreview(dataUrl);
     setImageBase64(dataUrl.split(",")[1]);
-    setPublishedId("");
+    setPublishedCode("");
     setStatus("idle");
   }
 
@@ -65,14 +65,14 @@ export default function Admin() {
     setError(""); setStatus("publishing");
     try {
       const r = await post("/api/publish", { password, product: fields, imageBase64, mediaType: "image/jpeg" });
-      setPublishedId(r.id); setStatus("done");
+      setPublishedCode(r.code || ""); setStatus("done");
     } catch (e) {
       setStatus("idle"); setError(e instanceof Error ? e.message : "Could not publish.");
     }
   }
 
   function reset() {
-    setPreview(""); setImageBase64(""); setFields(EMPTY); setStatus("idle"); setPublishedId(""); setError("");
+    setPreview(""); setImageBase64(""); setFields(EMPTY); setStatus("idle"); setPublishedCode(""); setError("");
   }
 
   return (
@@ -145,7 +145,7 @@ export default function Admin() {
 
           {status === "done" ? (
             <div className="admin-done">
-              <p>✅ Published <strong>{fields.name}</strong> ({publishedId}). It will appear on the site in about a minute.</p>
+              <p>✅ Published <strong>{fields.name}</strong> as item code <strong>{publishedCode}</strong>. It will appear on the site in about a minute.</p>
               <button type="button" className="btn btn-primary" onClick={reset}>Add another product</button>
             </div>
           ) : (

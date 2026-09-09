@@ -51,11 +51,15 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
         </div>
 
         <div className="product-info">
-          <span className="card-cat">{product.category}</span>
+          <span className="card-cat">{product.category}<i className="card-code">{product.code}</i></span>
           <h1 className="product-title">{product.name}</h1>
           <p className="product-blurb">{product.blurb}</p>
 
           <div className="product-detail">
+            <div>
+              <span className="detail-label">Item code</span>
+              <p>{product.code}</p>
+            </div>
             <div>
               <span className="detail-label">Material</span>
               <p>Hand-finished silver, won&apos;t rust or fade, made to be kept.</p>
@@ -76,7 +80,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
 
           <div className="hero-cta">
             <Link
-              href={`/enquire?item=${encodeURIComponent(product.name)}&url=${encodeURIComponent(`${siteUrl}/catalogue/${product.id}/`)}`}
+              href={`/enquire?item=${encodeURIComponent(`${product.name} (${product.code})`)}&url=${encodeURIComponent(`${siteUrl}/catalogue/${product.id}/`)}`}
               className="btn btn-primary">
               Enquire about this
             </Link>
