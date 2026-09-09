@@ -11,17 +11,10 @@ const OCCASIONS = [
 ];
 
 const COLLECTIONS: { eyebrow: string; category: string; title: string; note: string }[] = [
-  { eyebrow: "For beginnings", category: "Wedding", title: "Wedding & Trousseau", note: "Shagun sets, return gifts and heirloom boxes, chosen to be remembered." },
-  { eyebrow: "For rituals", category: "Pooja", title: "Pooja & Mandir", note: "Thalis, kalash and aarti pieces that join the family's customs." },
+  { eyebrow: "For weddings", category: "Wedding", title: "Wedding & Trousseau", note: "Shagun sets, return gifts and trousseau boxes." },
+  { eyebrow: "For the mandir", category: "Pooja", title: "Pooja & Mandir", note: "Thalis, kalash and aarti pieces for daily prayer and festivals." },
   { eyebrow: "For festivals", category: "Diwali", title: "Diwali & Festive", note: "Diyas, dry-fruit platters and hampers for the whole guest list." },
-  { eyebrow: "For the home", category: "Home & Table", title: "Home & Table", note: "Serveware, urlis and quiet décor for everyday elegance." },
-];
-
-const PILLARS = [
-  { n: "01", title: "Craft", body: "Handworked silver, chosen for proportion, finish and feel." },
-  { n: "02", title: "Celebration", body: "Made for weddings, festivals, housewarmings and milestones." },
-  { n: "03", title: "Story", body: "A handwritten card and a piece tied to a person and a moment." },
-  { n: "04", title: "Kept", body: "Designed to outlast the occasion — reused, regifted, remembered." },
+  { eyebrow: "For the home", category: "Home & Table", title: "Home & Table", note: "Serveware, urlis and décor for the home." },
 ];
 
 export default function Home() {
@@ -39,14 +32,14 @@ export default function Home() {
         <Toran />
         <div className="wrap hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">Objects of tradition · Stories for generations</p>
+            <p className="eyebrow">Diwali · Weddings · Festive gifting</p>
             <h1 className="hero-title">
               Where every gift<br /><em>becomes a story.</em>
             </h1>
             <p className="hero-sub">
-              Tattva is a curated catalogue of handcrafted silver — thalis, urlis, diyas,
-              trousseau boxes and more. Browse, pick what suits the moment, and we&apos;ll put
-              the package together with you.
+              Tattva makes silver gifts for Diwali, weddings and everyday occasions: thalis, urlis,
+              diyas, trousseau boxes and more. Tell us the occasion and we&apos;ll help you put the
+              package together.
             </p>
             <div className="hero-cta">
               <Link href="/catalogue" className="btn btn-primary">Browse the catalogue</Link>
@@ -54,7 +47,7 @@ export default function Home() {
                 Enquire on WhatsApp
               </a>
             </div>
-            <p className="hero-note">No fixed prices — every order is quoted to the package.</p>
+            <p className="hero-note">No fixed prices. Every order is quoted to the package.</p>
           </div>
           <div className="hero-plate engraved" aria-hidden>
             <Photo src={logo} alt="" width={210} height={210} className="hero-logo" fallback={<Motif />} />
@@ -77,18 +70,17 @@ export default function Home() {
         <p className="eyebrow">The name</p>
         <h2 className="meaning-title">What <em>Tattva</em> means</h2>
         <p className="meaning-body">
-          Tattva (तत्त्व) is Sanskrit for the <strong>essence</strong> of a thing — its truest nature,
-          the element it is made of. A gift, at its best, is the same: not the object, but the meaning
-          it carries — the relationship, the occasion, the memory held inside it. That is what every
-          Tattva piece is chosen for.
+          Tattva (तत्त्व) is Sanskrit for essence, the true nature of a thing. We chose the name
+          because a good gift isn&apos;t really about the object. It&apos;s about the person you give
+          it to, and the occasion behind it.
         </p>
       </section>
 
       {/* ---- collections ---- */}
       <section className="wrap collections">
         <div className="section-head reveal">
-          <p className="eyebrow">Occasion-led collections</p>
-          <h2>Gifts for the moments that matter</h2>
+          <p className="eyebrow">Shop by occasion</p>
+          <h2>Browse the collections</h2>
           <hr className="rule" />
         </div>
         <div className="collection-grid">
@@ -118,32 +110,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---- four pillars ---- */}
-      <section className="pillars on-dark reveal">
-        <div className="wrap">
-          <div className="section-head">
-            <p className="eyebrow">The Tattva idea</p>
-            <h2>Four things every piece carries</h2>
-          </div>
-          <div className="pillar-grid">
-            {PILLARS.map((p) => (
-              <div key={p.n} className="pillar">
-                <span className="pillar-n">{p.n}</span>
-                <h3 className="pillar-title">{p.title}</h3>
-                <p className="pillar-body">{p.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ---- motto teaser ---- */}
       <section className="wrap ethos-teaser-light reveal">
         <p className="eyebrow">Our motto</p>
         <h2 className="teaser-title">Made to be kept, not thrown away.</h2>
         <p className="teaser-body">
-          A Tattva piece doesn&apos;t rust, fade or end up in a bin after one festival. One piece,
-          many lives — a gift that keeps coming back out, year after year.
+          Silver won&apos;t rust or fade, or get thrown out after one festival. The same piece comes
+          back out year after year, and can be refilled and regifted for as long as you own it.
         </p>
         <Link href="/sustainability" className="btn btn-ghost btn-ghost-dark">Why it lasts →</Link>
       </section>
@@ -152,12 +125,12 @@ export default function Home() {
       <section className="about-teaser-band on-dark reveal">
         <div className="wrap">
           <p className="eyebrow">{site.owner}</p>
-          <h2 className="teaser-title">An artist&apos;s eye behind every package</h2>
+          <h2 className="teaser-title">Made by Manisha</h2>
           <p className="teaser-body">
-            Tattva is Manisha&apos;s — an artist and chef who spent years making these gifts for the
-            people she loves, and now makes them for you. Every order comes with a handwritten story card.
+            Tattva is run by Manisha, an artist and chef who spent years making these gifts for her
+            own family and friends. Every order comes with a handwritten note from her.
           </p>
-          <Link href="/about" className="btn btn-ghost">Meet Manisha →</Link>
+          <Link href="/about" className="btn btn-ghost">About Manisha →</Link>
         </div>
       </section>
     </>

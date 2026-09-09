@@ -7,20 +7,20 @@ export type Product = {
   name: string;
   category: Category;
   blurb: string;
-  // The "second life" — how the piece gets reused after the occasion.
+  // The "second life", how the piece gets reused after the occasion.
   reuse: string;
   // Photo path under /public/products. The file is <id>.jpg by convention.
   image: string;
 };
 
-// These are Tattva's real pieces. Reword names, blurbs and categories freely —
+// These are Tattva's real pieces. Reword names, blurbs and categories freely, 
 // and to add a new item, copy a block, give it an id, and drop <id>.jpg in /public/products.
 export const products: Product[] = [
   {
     id: "pooja-thali-footed",
     name: "Footed Antique Pooja Thali",
     category: "Pooja",
-    blurb: "A raised thali hung with tiny bells, complete with diya, kalash, bell and bowls — a full aarti in a single piece.",
+    blurb: "A raised thali hung with tiny bells, complete with diya, kalash, bell and bowls, a full aarti in a single piece.",
     reuse: "The centrepiece of every festival and puja, brought out year after year.",
     image: "/products/pooja-thali-footed.jpg",
   },
@@ -36,8 +36,8 @@ export const products: Product[] = [
     id: "elephant-pooja-thali",
     name: "Elephant Pooja Thali Set",
     category: "Pooja",
-    blurb: "A thali flanked by cast elephant heads, with matching bell and kalash — regal and unmistakable.",
-    reuse: "A festival staple that doubles as a decor piece on the console.",
+    blurb: "A thali flanked by cast elephant heads, with a matching bell and kalash.",
+    reuse: "Used at festivals, and sits as a decor piece on the console in between.",
     image: "/products/elephant-pooja-thali.jpg",
   },
   {
@@ -45,14 +45,14 @@ export const products: Product[] = [
     name: "Boxed Pooja Thali, Oval",
     category: "Pooja",
     blurb: "An oval thali with bell, kalash and plate, presented in a soft velvet gift box.",
-    reuse: "Gift-boxed today, an aarti staple for a lifetime.",
+    reuse: "Kept and used at the mandir for years after.",
     image: "/products/boxed-pooja-thali-oval.jpg",
   },
   {
     id: "boxed-pooja-thali-grand",
     name: "Boxed Pooja Thali, Grand",
     category: "Pooja",
-    blurb: "A full scalloped thali — incense shaker, kalash, lidded box and bowls — in a keepsake box.",
+    blurb: "A full scalloped thali, incense shaker, kalash, lidded box and bowls, in a keepsake box.",
     reuse: "Everything a home puja needs, brought out again and again.",
     image: "/products/boxed-pooja-thali-grand.jpg",
   },
@@ -77,22 +77,22 @@ export const products: Product[] = [
     name: "Boxed Dry-Fruit Plate",
     category: "Diwali",
     blurb: "A lace-edged plate with a flower bowl, boxed and ready to gift full of mewa.",
-    reuse: "A dessert or dry-fruit plate that outlasts the sweets by decades.",
+    reuse: "Used as a dessert or dry-fruit plate for years after.",
     image: "/products/boxed-dryfruit-plate.jpg",
   },
   {
     id: "heritage-gift-box",
     name: "Peacock Heritage Gift Box",
     category: "Wedding",
-    blurb: "A grand engraved box crowned with Ganesh and peacocks, panelled with a baraat in relief — arrives full, kept forever.",
-    reuse: "Becomes the family keepsake box — jewellery, letters, whatever matters.",
+    blurb: "A large engraved box topped with Ganesh and peacocks, with a baraat scene around the sides. Arrives full and kept long after.",
+    reuse: "Kept as a family box for jewellery, letters and small keepsakes.",
     image: "/products/heritage-gift-box.jpg",
   },
   {
     id: "laxmi-ganesh-set",
-    name: "Laxmi–Ganesh Shagun Set",
+    name: "Laxmi-Ganesh Shagun Set",
     category: "Wedding",
-    blurb: "Laxmi and Ganesh idols with a mirrored tray and photo frame — a complete shagun for weddings and housewarmings.",
+    blurb: "Laxmi and Ganesh idols with a mirrored tray and photo frame, a complete shagun for weddings and housewarmings.",
     reuse: "The idols stay on the mandir for good; the tray keeps hosting guests.",
     image: "/products/laxmi-ganesh-set.jpg",
   },
@@ -100,7 +100,7 @@ export const products: Product[] = [
     id: "wedding-pooja-tray",
     name: "Wedding Pooja Tray Set",
     category: "Wedding",
-    blurb: "A pierced-rail tray set with photo frame, Ganesh, bell, kalash and trinket boxes — one gift that covers the whole ceremony.",
+    blurb: "A pierced-rail tray set with photo frame, Ganesh, bell, kalash and trinket boxes, one gift that covers the whole ceremony.",
     reuse: "Each piece finds its own place in the new home.",
     image: "/products/wedding-pooja-tray.jpg",
   },
@@ -108,7 +108,7 @@ export const products: Product[] = [
     id: "charger-plate",
     name: "Engraved Charger Plate",
     category: "Wedding",
-    blurb: "A scalloped plate with a baraat engraved across it — a charger, a fruit plate, or wall-worthy decor.",
+    blurb: "A scalloped plate with a baraat engraved across it. Works as a charger, a fruit plate, or wall decor.",
     reuse: "From wedding table to everyday charger to display piece.",
     image: "/products/charger-plate.jpg",
   },
@@ -116,7 +116,7 @@ export const products: Product[] = [
     id: "peacock-katori-set",
     name: "Peacock Katori & Tray Set",
     category: "Home & Table",
-    blurb: "A pair of lidded katoris crowned with peacocks, on a matching engraved tray — for serving mithai or dry fruit.",
+    blurb: "A pair of lidded katoris crowned with peacocks, on a matching engraved tray, for serving mithai or dry fruit.",
     reuse: "Everyday katoris for chutneys and sweets once the festival's over.",
     image: "/products/peacock-katori-set.jpg",
   },
@@ -124,7 +124,7 @@ export const products: Product[] = [
     id: "rose-bowl-set",
     name: "Rose Dome Katori Set",
     category: "Home & Table",
-    blurb: "Two domed, rose-engraved bowls on a tray — as pretty holding sindoor as they are holding sweets.",
+    blurb: "Two domed, rose-engraved bowls on a tray, for sindoor, sweets or trinkets.",
     reuse: "Trinket or dry-fruit bowls that never leave the table.",
     image: "/products/rose-bowl-set.jpg",
   },
@@ -132,7 +132,7 @@ export const products: Product[] = [
     id: "fruit-basket",
     name: "Ginkgo Filigree Fruit Basket",
     category: "Home & Table",
-    blurb: "A square lace basket with a leaf border — for fruit, flowers, or a styled gift.",
+    blurb: "A square lace basket with a leaf border, for fruit, flowers, or a styled gift.",
     reuse: "A fruit bowl or centrepiece for the everyday, not just the occasion.",
     image: "/products/fruit-basket.jpg",
   },

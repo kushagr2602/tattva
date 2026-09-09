@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const p = products.find((x) => x.id === id);
   return p
-    ? { title: `${p.name} — Tattva`, description: p.blurb }
-    : { title: "Not found — Tattva" };
+    ? { title: `${p.name} | Tattva`, description: p.blurb }
+    : { title: "Not found | Tattva" };
 }
 
 export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
@@ -49,7 +49,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
           <div className="product-detail">
             <div>
               <span className="detail-label">Material</span>
-              <p>Hand-finished silver — won&apos;t rust or fade, made to be kept.</p>
+              <p>Hand-finished silver, won&apos;t rust or fade, made to be kept.</p>
             </div>
             <div>
               <span className="detail-label">Second life</span>
@@ -71,7 +71,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
             </a>
             <Link href="/contact" className="btn btn-ghost btn-ghost-dark">How ordering works</Link>
           </div>
-          <p className="product-note">No fixed price — quoted to your occasion, quantity and packaging.</p>
+          <p className="product-note">No fixed price, quoted to your occasion, quantity and packaging.</p>
         </div>
       </article>
 

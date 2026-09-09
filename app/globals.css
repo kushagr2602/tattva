@@ -2,15 +2,15 @@
 
 /* ---- Design tokens ------------------------------------------------------ */
 :root {
-  --paper: #f4efe5;      /* cream ground — matches the logo */
+  --paper: #f4efe5;      /* cream ground, matches the logo */
   --paper-2: #ece4d5;    /* slightly deeper card ground */
-  --oxblood: #163a2e;    /* deep forest green — hero/footer panels (Tattva wordmark) */
+  --oxblood: #163a2e;    /* deep forest green, hero/footer panels (Tattva wordmark) */
   --oxblood-2: #0f2a20;
-  --brass: #b08842;      /* antique gold — accent & hairlines (lotus) */
+  --brass: #b08842;      /* antique gold, accent & hairlines (lotus) */
   --brass-soft: #cda768;
   --pewter: #8a8f97;     /* the metal, mid */
   --silver: #d8dbe0;     /* the metal, light */
-  --ink: #1c2a24;        /* body text — soft green-black */
+  --ink: #1c2a24;        /* body text, soft green-black */
   --ink-soft: #4c5a52;
 }
 

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { site, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact & ordering — Tattva",
-  description: "How to order from Tattva — browse, message on WhatsApp, and we quote and pack your gift.",
+  title: "Contact & ordering | Tattva",
+  description: "How to order from Tattva: browse, message on WhatsApp, and we quote and pack your gift.",
 };
 
 export default function ContactPage() {
@@ -14,7 +14,7 @@ export default function ContactPage() {
           <p className="eyebrow">How ordering works</p>
           <h1>Three steps, no checkout</h1>
           <p className="page-head-sub">
-            We keep it personal. There&apos;s no cart — you tell us what you like, and we build the package with you.
+            We keep it personal. There&apos;s no cart, you tell us what you like, and we build the package with you.
           </p>
         </div>
       </section>

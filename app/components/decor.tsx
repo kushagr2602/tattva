@@ -1,6 +1,6 @@
-// Pure decorative SVGs — no state, safe in server or client components.
+// Pure decorative SVGs, no state, safe in server or client components.
 
-// Toran — a hanging garland strip across the top of the hero, echoing the
+// Toran, a hanging garland strip across the top of the hero, echoing the
 // marigold-and-leaf torans strung over a doorway at a wedding or Diwali.
 export function Toran() {
   const n = 48;

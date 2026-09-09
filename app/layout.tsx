@@ -20,8 +20,8 @@ const hanken = Hanken_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: `${site.brand} — Silver Gifting`,
-  description: `${site.tagline}. Handpicked silver gifts for Diwali, weddings and every occasion.`,
+  title: `${site.brand} | Silver Gifting`,
+  description: `${site.tagline}. Silver gifts for Diwali, weddings and everyday occasions.`,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
