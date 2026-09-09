@@ -1,69 +1,103 @@
-import Image from "next/image";
+import Link from "next/link";
+import { getProducts, getSiteImages } from "@/lib/catalogue";
+import { site, whatsappLink } from "@/lib/site";
+import Photo from "./components/Photo";
+import ProductCard from "./components/ProductCard";
+import { Toran, Motif } from "./components/decor";
 
 export default function Home() {
+  const products = getProducts();
+  const { logo, heroBg } = getSiteImages();
+  const featured = products.slice(0, 6);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      {/* ---- hero ---- */}
+      <section
+        className={`hero on-dark ${heroBg ? "hero-photo" : ""}`}
+        style={heroBg ? { backgroundImage: `linear-gradient(105deg, rgba(15,42,32,0.94) 30%, rgba(15,42,32,0.55) 100%), url(${heroBg})` } : undefined}
+      >
+        <Toran />
+        <div className="wrap hero-grid">
+          <div className="hero-copy">
+            <p className="eyebrow">German Silver Gifting · Diwali · Weddings</p>
+            <h1 className="hero-title">
+              Where every gift<br /><em>becomes a story.</em>
+            </h1>
+            <p className="hero-sub">
+              Tattva is a curated catalogue of handcrafted German silver — thalis, urlis, diyas,
+              trousseau boxes and more. Browse, pick what suits the moment, and we&apos;ll put
+              the package together with you.
+            </p>
+            <div className="hero-cta">
+              <Link href="/catalogue" className="btn btn-primary">Browse the catalogue</Link>
+              <a href={whatsappLink()} target="_blank" rel="noopener" className="btn btn-ghost">
+                Enquire on WhatsApp
+              </a>
+            </div>
+            <p className="hero-note">No fixed prices — every order is quoted to the package.</p>
+          </div>
+          <div className="hero-plate engraved" aria-hidden>
+            <Photo src={logo} alt="" width={210} height={210} className="hero-logo" fallback={<Motif />} />
+            <span className="hero-plate-word">{site.owner}</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- occasions strip ---- */}
+      <section className="wrap strip reveal">
+        <Occasion title="Diwali hampers" note="Repeatable gifts for a full guest list." />
+        <Occasion title="Wedding & trousseau" note="Shagun pieces and heirloom boxes." />
+        <Occasion title="Bulk & corporate" note="Consistent sets, quoted per quantity." />
+      </section>
+
+      {/* ---- featured ---- */}
+      <section className="wrap catalogue">
+        <div className="section-head reveal">
+          <p className="eyebrow">The catalogue</p>
+          <h2>A few pieces to start with</h2>
+          <hr className="rule" />
+        </div>
+        <div className="grid">
+          {featured.map((p) => <ProductCard key={p.id} product={p} />)}
+        </div>
+        <div className="section-more reveal">
+          <Link href="/catalogue" className="btn btn-ghost btn-ghost-dark">See the full catalogue →</Link>
+        </div>
+      </section>
+
+      {/* ---- motto teaser ---- */}
+      <section className="ethos-teaser on-dark reveal">
+        <div className="wrap">
+          <p className="eyebrow">Our motto</p>
+          <h2 className="teaser-title">Made to be kept, not thrown away.</h2>
+          <p className="teaser-body">
+            German silver doesn&apos;t rust, fade or end up in a bin after one festival. One piece,
+            many lives — a gift that keeps coming back out, year after year.
           </p>
+          <Link href="/sustainability" className="btn btn-ghost">Why it lasts →</Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
+
+      {/* ---- about teaser ---- */}
+      <section className="wrap about-teaser reveal">
+        <p className="eyebrow">{site.owner}</p>
+        <h2>An artist&apos;s eye behind every package</h2>
+        <p className="teaser-body">
+          Tattva is Manisha&apos;s — an artist and chef who spent years making these gifts for the
+          people she loves, and now makes them for you. Every order comes with a handwritten story card.
+        </p>
+        <Link href="/about" className="btn btn-ghost btn-ghost-dark">Meet Manisha →</Link>
+      </section>
+    </>
+  );
+}
+
+function Occasion({ title, note }: { title: string; note: string }) {
+  return (
+    <div className="occ">
+      <h3 className="occ-title">{title}</h3>
+      <p className="occ-note">{note}</p>
     </div>
   );
 }
