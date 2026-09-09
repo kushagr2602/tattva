@@ -5,6 +5,13 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 
 const OCCASIONS = ["Wedding", "Diwali / Festive", "Rakhi", "Housewarming", "Anniversary", "Naming ceremony", "Corporate / Bulk", "Other"];
+
+// "2026-11-05" -> "5 Nov 2026" (built locally to avoid timezone shifts)
+function prettyDate(v: string) {
+  if (!v) return "";
+  const [y, m, d] = v.split("-").map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+}
 const BUDGETS = ["Not sure yet", "Under ₹1,000 each", "₹1,000–3,000 each", "₹3,000–5,000 each", "Above ₹5,000 each"];
 
 export default function Enquire() {
@@ -33,18 +40,24 @@ export default function Enquire() {
       return;
     }
     const lines = [
-      "*New Tattva enquiry*",
-      `Name: ${name.trim()}`,
-      `Occasion: ${occasion}`,
-      item.trim() && `Interested in: ${item.trim()}`,
-      quantity.trim() && `Quantity: ${quantity.trim()}`,
-      budget && `Budget: ${budget}`,
-      byDate && `Needed by: ${byDate}`,
-      `Handwritten story card: ${storyCard ? "Yes" : "No"}`,
-      notes.trim() && `Notes: ${notes.trim()}`,
-      productUrl && productUrl,
-    ].filter(Boolean);
-    const text = encodeURIComponent(lines.join("\n"));
+      `Hello ${site.brand} 🌸`,
+      "",
+      "I'd like to make a gifting enquiry:",
+      "",
+      `👤  *Name:*  ${name.trim()}`,
+      `🎊  *Occasion:*  ${occasion}`,
+      item.trim() && `🎁  *Pieces I like:*  ${item.trim()}`,
+      quantity.trim() && `🔢  *Quantity:*  ${quantity.trim()}`,
+      budget && `💰  *Budget:*  ${budget}`,
+      byDate && `📅  *Needed by:*  ${prettyDate(byDate)}`,
+      `✍️  *Handwritten story card:*  ${storyCard ? "Yes, please" : "No"}`,
+      notes.trim() && `📝  *Notes:*  ${notes.trim()}`,
+      productUrl && "",
+      productUrl && `🔗  ${productUrl}`,
+      "",
+      "Thank you! 🙏",
+    ].filter((l) => l !== false && l !== undefined);
+    const text = encodeURIComponent((lines as string[]).join("\n"));
     window.location.href = `https://wa.me/${site.whatsapp}?text=${text}`;
   }
 
