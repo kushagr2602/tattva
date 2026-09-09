@@ -39,7 +39,7 @@ export default function ContactPage() {
             <Link href="/enquire" className="btn btn-primary">Start an enquiry</Link>
             <a href={`mailto:${site.email}`} className="btn btn-ghost btn-ghost-dark">Email {site.email}</a>
           </div>
-          <p className="reassure">Free to ask · No obligation · We usually reply within a few hours</p>
+          <p className="reassure">It costs nothing to ask, and we usually have something bespoke in mind for you.</p>
         </div>
       </section>
     </>

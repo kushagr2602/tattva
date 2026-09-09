@@ -85,7 +85,7 @@ export default function Enquire() {
           <button type="button" className="btn btn-primary" onClick={justChat}>
             Just chat with us on WhatsApp →
           </button>
-          <span className="reassure">Free to ask · No obligation · We usually reply within a few hours</span>
+          <span className="reassure">It costs nothing to ask, and we usually have something bespoke in mind for you.</span>
         </div>
 
         <p className="enquire-or"><span>or fill in a few details</span></p>
@@ -143,7 +143,7 @@ export default function Enquire() {
             <button type="submit" className="btn btn-primary">Send enquiry on WhatsApp</button>
             <Link href="/catalogue" className="btn btn-ghost btn-ghost-dark">Back to catalogue</Link>
           </div>
-          <p className="reassure field-wide">Free to ask · No obligation · We usually reply within a few hours</p>
+          <p className="reassure field-wide">It costs nothing to ask, and we usually have something bespoke in mind for you.</p>
           <p className="enquire-note field-wide">
             This opens WhatsApp with your answers filled in. You still tap send, and you can edit first.
             Prefer email? Write to <a href={`mailto:${site.email}`}>{site.email}</a>.
