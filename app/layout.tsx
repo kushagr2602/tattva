@@ -6,6 +6,7 @@ import { getSiteImages } from "@/lib/catalogue";
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 import ScrollReveal from "./components/ScrollReveal";
+import FloatWhatsApp from "./components/FloatWhatsApp";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteHeader logo={logo} />
         <main id="top" className="flex-1">{children}</main>
         <SiteFooter />
+        <FloatWhatsApp />
         <ScrollReveal />
       </body>
     </html>
