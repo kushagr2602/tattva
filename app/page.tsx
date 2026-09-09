@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { getProducts, getSiteImages } from "@/lib/catalogue";
-import { site } from "@/lib/site";
 import Photo from "./components/Photo";
 import ProductCard from "./components/ProductCard";
 import { Toran, Motif, HeroBloom } from "./components/decor";
@@ -171,7 +170,7 @@ export default function Home() {
       {/* ---- about teaser ---- */}
       <section className="about-teaser-band on-dark reveal">
         <div className="wrap">
-          <p className="eyebrow">{site.owner}</p>
+          <p className="eyebrow">The maker</p>
           <h2 className="teaser-title">Made by Manisha</h2>
           <p className="teaser-body">
             Tattva is run by Manisha, an artist and chef who spent years making these gifts for her

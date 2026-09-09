@@ -14,7 +14,7 @@ export default function AboutPage() {
     <>
       <section className="page-head on-dark">
         <div className="wrap">
-          <p className="eyebrow">{site.owner}</p>
+          <p className="eyebrow">Meet Manisha</p>
           <h1>{about.heading}</h1>
         </div>
       </section>
