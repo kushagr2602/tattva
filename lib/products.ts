@@ -11,6 +11,10 @@ export type Product = {
   reuse: string;
   // Photo path under /public/products. The file is <id>.jpg by convention.
   image: string;
+  // How the photo sits in the card frame. Default "cover" (fills, may crop) suits
+  // landscape shots; "contain" (shows the whole photo on a soft ground) suits tall
+  // portrait shots so nothing is cut off. Set by check-framing.mjs guidance.
+  fit?: "cover" | "contain";
 };
 
 // These are Tattva's real pieces. Reword names, blurbs and categories freely, 
@@ -23,6 +27,7 @@ export const products: Product[] = [
     blurb: "A raised thali hung with tiny bells, complete with diya, kalash, bell and bowls, a full aarti in a single piece.",
     reuse: "The centrepiece of every festival and puja, brought out year after year.",
     image: "/products/pooja-thali-footed.jpg",
+    fit: "contain",
   },
   {
     id: "rose-pooja-thali",
@@ -31,6 +36,7 @@ export const products: Product[] = [
     blurb: "A scalloped thali with bell, incense burner, kumkum box and bowl, rose-engraved throughout.",
     reuse: "Comes out for every prayer and returns to the mandir shelf between them.",
     image: "/products/rose-pooja-thali.jpg",
+    fit: "contain",
   },
   {
     id: "elephant-pooja-thali",
@@ -39,6 +45,7 @@ export const products: Product[] = [
     blurb: "A thali flanked by cast elephant heads, with a matching bell and kalash.",
     reuse: "Used at festivals, and sits as a decor piece on the console in between.",
     image: "/products/elephant-pooja-thali.jpg",
+    fit: "contain",
   },
   {
     id: "boxed-pooja-thali-oval",
@@ -55,6 +62,7 @@ export const products: Product[] = [
     blurb: "A full scalloped thali, incense shaker, kalash, lidded box and bowls, in a keepsake box.",
     reuse: "Everything a home puja needs, brought out again and again.",
     image: "/products/boxed-pooja-thali-grand.jpg",
+    fit: "contain",
   },
   {
     id: "peacock-dryfruit-platter",
@@ -63,6 +71,7 @@ export const products: Product[] = [
     blurb: "A two-part paisley platter with peacock handles, sized for an assortment of mewa.",
     reuse: "Serves nuts and snacks at every gathering, long after Diwali.",
     image: "/products/peacock-dryfruit-platter.jpg",
+    fit: "contain",
   },
   {
     id: "filigree-dryfruit-platter",
@@ -79,6 +88,7 @@ export const products: Product[] = [
     blurb: "A lace-edged plate with a flower bowl, boxed and ready to gift full of mewa.",
     reuse: "Used as a dessert or dry-fruit plate for years after.",
     image: "/products/boxed-dryfruit-plate.jpg",
+    fit: "contain",
   },
   {
     id: "heritage-gift-box",
@@ -87,6 +97,7 @@ export const products: Product[] = [
     blurb: "A large engraved box topped with Ganesh and peacocks, with a baraat scene around the sides. Arrives full and kept long after.",
     reuse: "Kept as a family box for jewellery, letters and small keepsakes.",
     image: "/products/heritage-gift-box.jpg",
+    fit: "contain",
   },
   {
     id: "laxmi-ganesh-set",
@@ -95,6 +106,7 @@ export const products: Product[] = [
     blurb: "Laxmi and Ganesh idols with a mirrored tray and photo frame, a complete shagun for weddings and housewarmings.",
     reuse: "The idols stay on the mandir for good; the tray keeps hosting guests.",
     image: "/products/laxmi-ganesh-set.jpg",
+    fit: "contain",
   },
   {
     id: "wedding-pooja-tray",
@@ -103,6 +115,7 @@ export const products: Product[] = [
     blurb: "A pierced-rail tray set with photo frame, Ganesh, bell, kalash and trinket boxes, one gift that covers the whole ceremony.",
     reuse: "Each piece finds its own place in the new home.",
     image: "/products/wedding-pooja-tray.jpg",
+    fit: "contain",
   },
   {
     id: "charger-plate",
@@ -135,5 +148,74 @@ export const products: Product[] = [
     blurb: "A square lace basket with a leaf border, for fruit, flowers, or a styled gift.",
     reuse: "A fruit bowl or centrepiece for the everyday, not just the occasion.",
     image: "/products/fruit-basket.jpg",
+  },
+  {
+    id: "boxed-kalash",
+    name: "Boxed Kalash, Laxmi-Ganesh",
+    category: "Pooja",
+    blurb: "A Laxmi-Ganesh kalash in a Tattva gift box, cushioned with roses.",
+    reuse: "Used at every puja and housewarming, and kept on the mandir.",
+    image: "/products/boxed-kalash.jpg",
+    fit: "contain",
+  },
+  {
+    id: "candle-stand-set",
+    name: "Candle Stand Pair with Tray",
+    category: "Home & Table",
+    blurb: "A pair of candle stands on a round engraved tray, for tealights or pillar candles.",
+    reuse: "Lit at festivals and dinners, and left out as a centrepiece.",
+    image: "/products/candle-stand-set.jpg",
+  },
+  {
+    id: "peacock-bowl-box-set",
+    name: "Peacock Bowl & Lidded Box Tray",
+    category: "Home & Table",
+    blurb: "A rectangular engraved tray with a peacock mukhwas bowl and a domed lidded box.",
+    reuse: "Serves mukhwas and sweets to guests, year round.",
+    image: "/products/peacock-bowl-box-set.jpg",
+  },
+  {
+    id: "festive-gifting-tray",
+    name: "Festive Gifting Tray",
+    category: "Diwali",
+    blurb: "A round tray set with a dry-fruit bowl, a Ganesh idol and a candle stand.",
+    reuse: "The tray and idol stay out through the festival season and beyond.",
+    image: "/products/festive-gifting-tray.jpg",
+  },
+  {
+    id: "elephant-frame-set",
+    name: "Elephant Frame & Candle Set",
+    category: "Wedding",
+    blurb: "A green-enamel elephant photo frame with a matching candle stand and mirror tray.",
+    reuse: "The frame holds a family photo for good; the tray hosts guests.",
+    image: "/products/elephant-frame-set.jpg",
+    fit: "contain",
+  },
+  {
+    id: "footed-scalloped-bowl",
+    name: "Footed Scalloped Bowl",
+    category: "Home & Table",
+    blurb: "A footed silver bowl with a scalloped rim and beaded scrollwork, boxed to gift.",
+    reuse: "A fruit or centrepiece bowl that stays on the table for years.",
+    image: "/products/footed-scalloped-bowl.jpg",
+    fit: "contain",
+  },
+  {
+    id: "frame-brownie-hamper",
+    name: "Photo Frame Gift Hamper",
+    category: "Wedding",
+    blurb: "A silver-plated photo frame paired with a box of treats, in a velvet gift box.",
+    reuse: "The frame keeps a photo long after the treats are gone.",
+    image: "/products/frame-brownie-hamper.jpg",
+    fit: "contain",
+  },
+  {
+    id: "handled-basket",
+    name: "Handled Filigree Basket",
+    category: "Home & Table",
+    blurb: "A filigree basket with a handle and a pierced rail, presented in a velvet box.",
+    reuse: "Holds fruit, snacks or flowers, and doubles as decor.",
+    image: "/products/handled-basket.jpg",
+    fit: "contain",
   },
 ];

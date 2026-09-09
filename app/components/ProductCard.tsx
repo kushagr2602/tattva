@@ -7,8 +7,8 @@ import type { Product } from "@/lib/products";
 export default function ProductCard({ product }: { product: Product }) {
   return (
     <Link href={`/catalogue/${product.id}`} className="card reveal">
-      <div className="card-media engraved">
-        <Photo src={product.image} alt={product.name} fill
+      <div className={`card-media engraved ${product.fit === "contain" ? "media-contain" : ""}`}>
+        <Photo src={product.image} alt={product.name} fill fit={product.fit}
           fallback={<div className="plate" aria-hidden><Motif small /></div>} />
       </div>
       <div className="card-body">

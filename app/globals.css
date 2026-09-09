@@ -276,6 +276,9 @@ h1, h2, h3 {
 
 .card { display: flex; flex-direction: column; }
 .card-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--paper-2); border-radius: 3px; }
+/* portrait / tall photos shown in full on a soft ground, nothing cropped */
+.media-contain { background: radial-gradient(circle at 50% 40%, #fbf7ef, var(--paper-2)); }
+.media-contain img { padding: 10px; }
 .plate {
   position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
   background:
