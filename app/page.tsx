@@ -48,6 +48,7 @@ export default function Home() {
               <Link href="/catalogue" className="btn btn-primary">Browse the catalogue</Link>
               <Link href="/enquire" className="btn btn-ghost">Start an enquiry</Link>
             </div>
+            <p className="reassure">Free to ask · No obligation · We usually reply within a few hours</p>
             <p className="hero-note">No fixed prices. Every order is quoted to the package.</p>
           </div>
           <div className="hero-plate" aria-hidden>

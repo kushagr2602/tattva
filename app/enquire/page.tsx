@@ -80,6 +80,16 @@ export default function Enquire() {
       </section>
 
       <section className="wrap enquire-wrap">
+        <div className="enquire-skip enquire-skip-top">
+          <span>Feeling lazy, or not sure of the details yet? Skip the form.</span>
+          <button type="button" className="btn btn-primary" onClick={justChat}>
+            Just chat with us on WhatsApp →
+          </button>
+          <span className="reassure">Free to ask · No obligation · We usually reply within a few hours</span>
+        </div>
+
+        <p className="enquire-or"><span>or fill in a few details</span></p>
+
         <form className="enquire-form engraved" onSubmit={submit}>
           <label className="field">
             <span>Your name<i>*</i></span>
@@ -133,18 +143,12 @@ export default function Enquire() {
             <button type="submit" className="btn btn-primary">Send enquiry on WhatsApp</button>
             <Link href="/catalogue" className="btn btn-ghost btn-ghost-dark">Back to catalogue</Link>
           </div>
+          <p className="reassure field-wide">Free to ask · No obligation · We usually reply within a few hours</p>
           <p className="enquire-note field-wide">
             This opens WhatsApp with your answers filled in. You still tap send, and you can edit first.
             Prefer email? Write to <a href={`mailto:${site.email}`}>{site.email}</a>.
           </p>
         </form>
-
-        <div className="enquire-skip">
-          <span>Feeling lazy, or not sure of the details yet?</span>
-          <button type="button" className="btn btn-ghost btn-ghost-dark" onClick={justChat}>
-            Skip the form, just chat with us →
-          </button>
-        </div>
       </section>
     </>
   );

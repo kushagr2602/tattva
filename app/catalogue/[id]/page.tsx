@@ -82,6 +82,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
             </Link>
             <Link href="/contact" className="btn btn-ghost btn-ghost-dark">How ordering works</Link>
           </div>
+          <p className="reassure">Free to ask · No obligation · We usually reply within a few hours</p>
           <p className="product-note">No fixed price, quoted to your occasion, quantity and packaging.</p>
         </div>
       </article>
