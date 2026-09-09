@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { products } from "@/lib/products";
 import { getProduct, getProducts, resolveImage } from "@/lib/catalogue";
-import { whatsappLink, siteUrl } from "@/lib/site";
+import { siteUrl } from "@/lib/site";
 import Photo from "../../components/Photo";
 import ProductCard from "../../components/ProductCard";
 import { Motif } from "../../components/decor";
@@ -75,9 +75,11 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
           </div>
 
           <div className="hero-cta">
-            <a href={whatsappLink(product.name, `${siteUrl}/catalogue/${product.id}/`)} target="_blank" rel="noopener" className="btn btn-primary">
-              Enquire on WhatsApp
-            </a>
+            <Link
+              href={`/enquire?item=${encodeURIComponent(product.name)}&url=${encodeURIComponent(`${siteUrl}/catalogue/${product.id}/`)}`}
+              className="btn btn-primary">
+              Enquire about this
+            </Link>
             <Link href="/contact" className="btn btn-ghost btn-ghost-dark">How ordering works</Link>
           </div>
           <p className="product-note">No fixed price, quoted to your occasion, quantity and packaging.</p>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getProducts, getSiteImages } from "@/lib/catalogue";
-import { site, whatsappLink } from "@/lib/site";
+import { site } from "@/lib/site";
 import Photo from "./components/Photo";
 import ProductCard from "./components/ProductCard";
 import { Toran, Motif, HeroBloom } from "./components/decor";
@@ -46,9 +46,7 @@ export default function Home() {
             </p>
             <div className="hero-cta">
               <Link href="/catalogue" className="btn btn-primary">Browse the catalogue</Link>
-              <a href={whatsappLink()} target="_blank" rel="noopener" className="btn btn-ghost">
-                Enquire on WhatsApp
-              </a>
+              <Link href="/enquire" className="btn btn-ghost">Start an enquiry</Link>
             </div>
             <p className="hero-note">No fixed prices. Every order is quoted to the package.</p>
           </div>

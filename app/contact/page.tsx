@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { site, whatsappLink } from "@/lib/site";
+import Link from "next/link";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact & ordering | Tattva",
@@ -35,9 +36,7 @@ export default function ContactPage() {
             Custom and bulk orders welcome. The quickest way to reach us is WhatsApp.
           </p>
           <div className="hero-cta">
-            <a href={whatsappLink()} target="_blank" rel="noopener" className="btn btn-primary">
-              Message on WhatsApp
-            </a>
+            <Link href="/enquire" className="btn btn-primary">Start an enquiry</Link>
             <a href={`mailto:${site.email}`} className="btn btn-ghost btn-ghost-dark">Email {site.email}</a>
           </div>
         </div>
