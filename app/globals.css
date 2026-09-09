@@ -539,3 +539,13 @@ h1, h2, h3 {
 .remember .wrap { max-width: 780px; }
 .remember-title { font-size: clamp(2rem, 5vw, 3.4rem); margin: 0.6rem auto 1.25rem; max-width: 16ch; }
 .remember-body { font-size: 1.12rem; line-height: 1.7; color: color-mix(in srgb, var(--paper) 84%, transparent); margin: 0 auto; }
+
+/* ---- admin (add product) ---- */
+.admin-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 2rem; align-items: start; }
+.admin-fields { display: flex; flex-direction: column; gap: 1.1rem; }
+.admin-preview { display: block; width: 100%; border-radius: 4px; margin-top: 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--brass) 40%, transparent); }
+.admin-done { margin-top: 1.5rem; padding: 1.25rem 1.4rem; background: color-mix(in srgb, var(--brass) 14%, var(--paper-2));
+  border-left: 3px solid var(--brass); border-radius: 0 4px 4px 0; display: flex; flex-direction: column; gap: 0.9rem; align-items: flex-start; }
+.admin-done p { color: var(--ink); }
+@media (max-width: 720px) { .admin-grid { grid-template-columns: 1fr; } }
