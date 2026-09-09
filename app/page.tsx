@@ -5,6 +5,25 @@ import Photo from "./components/Photo";
 import ProductCard from "./components/ProductCard";
 import { Toran, Motif } from "./components/decor";
 
+const OCCASIONS = [
+  "Weddings", "Anniversaries", "Housewarmings", "Diwali", "Rakhi",
+  "Naming ceremonies", "Corporate gifting", "Family celebrations",
+];
+
+const COLLECTIONS: { eyebrow: string; category: string; title: string; note: string }[] = [
+  { eyebrow: "For beginnings", category: "Wedding", title: "Wedding & Trousseau", note: "Shagun sets, return gifts and heirloom boxes, chosen to be remembered." },
+  { eyebrow: "For rituals", category: "Pooja", title: "Pooja & Mandir", note: "Thalis, kalash and aarti pieces that join the family's customs." },
+  { eyebrow: "For festivals", category: "Diwali", title: "Diwali & Festive", note: "Diyas, dry-fruit platters and hampers for the whole guest list." },
+  { eyebrow: "For the home", category: "Home & Table", title: "Home & Table", note: "Serveware, urlis and quiet décor for everyday elegance." },
+];
+
+const PILLARS = [
+  { n: "01", title: "Craft", body: "Handworked silver, chosen for proportion, finish and feel." },
+  { n: "02", title: "Celebration", body: "Made for weddings, festivals, housewarmings and milestones." },
+  { n: "03", title: "Story", body: "A handwritten card and a piece tied to a person and a moment." },
+  { n: "04", title: "Kept", body: "Designed to outlast the occasion — reused, regifted, remembered." },
+];
+
 export default function Home() {
   const products = getProducts();
   const { logo, heroBg } = getSiteImages();
@@ -20,12 +39,12 @@ export default function Home() {
         <Toran />
         <div className="wrap hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">German Silver Gifting · Diwali · Weddings</p>
+            <p className="eyebrow">Objects of tradition · Stories for generations</p>
             <h1 className="hero-title">
               Where every gift<br /><em>becomes a story.</em>
             </h1>
             <p className="hero-sub">
-              Tattva is a curated catalogue of handcrafted German silver — thalis, urlis, diyas,
+              Tattva is a curated catalogue of handcrafted silver — thalis, urlis, diyas,
               trousseau boxes and more. Browse, pick what suits the moment, and we&apos;ll put
               the package together with you.
             </p>
@@ -44,11 +63,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---- occasions strip ---- */}
-      <section className="wrap strip reveal">
-        <Occasion title="Diwali hampers" note="Repeatable gifts for a full guest list." />
-        <Occasion title="Wedding & trousseau" note="Shagun pieces and heirloom boxes." />
-        <Occasion title="Bulk & corporate" note="Consistent sets, quoted per quantity." />
+      {/* ---- occasion ticker ---- */}
+      <div className="ticker" aria-hidden>
+        <div className="ticker-track">
+          {[...OCCASIONS, ...OCCASIONS].map((o, i) => (
+            <span key={i} className="ticker-item">{o}<i>✦</i></span>
+          ))}
+        </div>
+      </div>
+
+      {/* ---- brand meaning ---- */}
+      <section className="wrap meaning reveal">
+        <p className="eyebrow">The name</p>
+        <h2 className="meaning-title">What <em>Tattva</em> means</h2>
+        <p className="meaning-body">
+          Tattva (तत्त्व) is Sanskrit for the <strong>essence</strong> of a thing — its truest nature,
+          the element it is made of. A gift, at its best, is the same: not the object, but the meaning
+          it carries — the relationship, the occasion, the memory held inside it. That is what every
+          Tattva piece is chosen for.
+        </p>
+      </section>
+
+      {/* ---- collections ---- */}
+      <section className="wrap collections">
+        <div className="section-head reveal">
+          <p className="eyebrow">Occasion-led collections</p>
+          <h2>Gifts for the moments that matter</h2>
+          <hr className="rule" />
+        </div>
+        <div className="collection-grid">
+          {COLLECTIONS.map((c) => (
+            <Link key={c.category} href={`/catalogue?category=${encodeURIComponent(c.category)}`} className="collection reveal">
+              <span className="collection-eyebrow">{c.eyebrow}</span>
+              <h3 className="collection-title">{c.title}</h3>
+              <p className="collection-note">{c.note}</p>
+              <span className="collection-link">View collection →</span>
+            </Link>
+          ))}
+        </div>
       </section>
 
       {/* ---- featured ---- */}
@@ -66,38 +118,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---- motto teaser ---- */}
-      <section className="ethos-teaser on-dark reveal">
+      {/* ---- four pillars ---- */}
+      <section className="pillars on-dark reveal">
         <div className="wrap">
-          <p className="eyebrow">Our motto</p>
-          <h2 className="teaser-title">Made to be kept, not thrown away.</h2>
-          <p className="teaser-body">
-            German silver doesn&apos;t rust, fade or end up in a bin after one festival. One piece,
-            many lives — a gift that keeps coming back out, year after year.
-          </p>
-          <Link href="/sustainability" className="btn btn-ghost">Why it lasts →</Link>
+          <div className="section-head">
+            <p className="eyebrow">The Tattva idea</p>
+            <h2>Four things every piece carries</h2>
+          </div>
+          <div className="pillar-grid">
+            {PILLARS.map((p) => (
+              <div key={p.n} className="pillar">
+                <span className="pillar-n">{p.n}</span>
+                <h3 className="pillar-title">{p.title}</h3>
+                <p className="pillar-body">{p.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ---- about teaser ---- */}
-      <section className="wrap about-teaser reveal">
-        <p className="eyebrow">{site.owner}</p>
-        <h2>An artist&apos;s eye behind every package</h2>
+      {/* ---- motto teaser ---- */}
+      <section className="wrap ethos-teaser-light reveal">
+        <p className="eyebrow">Our motto</p>
+        <h2 className="teaser-title">Made to be kept, not thrown away.</h2>
         <p className="teaser-body">
-          Tattva is Manisha&apos;s — an artist and chef who spent years making these gifts for the
-          people she loves, and now makes them for you. Every order comes with a handwritten story card.
+          A Tattva piece doesn&apos;t rust, fade or end up in a bin after one festival. One piece,
+          many lives — a gift that keeps coming back out, year after year.
         </p>
-        <Link href="/about" className="btn btn-ghost btn-ghost-dark">Meet Manisha →</Link>
+        <Link href="/sustainability" className="btn btn-ghost btn-ghost-dark">Why it lasts →</Link>
+      </section>
+
+      {/* ---- about teaser ---- */}
+      <section className="about-teaser-band on-dark reveal">
+        <div className="wrap">
+          <p className="eyebrow">{site.owner}</p>
+          <h2 className="teaser-title">An artist&apos;s eye behind every package</h2>
+          <p className="teaser-body">
+            Tattva is Manisha&apos;s — an artist and chef who spent years making these gifts for the
+            people she loves, and now makes them for you. Every order comes with a handwritten story card.
+          </p>
+          <Link href="/about" className="btn btn-ghost">Meet Manisha →</Link>
+        </div>
       </section>
     </>
-  );
-}
-
-function Occasion({ title, note }: { title: string; note: string }) {
-  return (
-    <div className="occ">
-      <h3 className="occ-title">{title}</h3>
-      <p className="occ-note">{note}</p>
-    </div>
   );
 }

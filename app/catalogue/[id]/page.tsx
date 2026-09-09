@@ -49,7 +49,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
           <div className="product-detail">
             <div>
               <span className="detail-label">Material</span>
-              <p>German silver — won&apos;t rust or fade, made to be kept.</p>
+              <p>Hand-finished silver — won&apos;t rust or fade, made to be kept.</p>
             </div>
             <div>
               <span className="detail-label">Second life</span>

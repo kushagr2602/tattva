@@ -184,6 +184,51 @@ h1, h2, h3 {
 .story-card p { font-family: var(--font-cormorant), serif; font-size: 1.35rem; line-height: 1.35; color: var(--ink); }
 @media (max-width: 760px) { .about { grid-template-columns: 1fr; gap: 1.75rem; } .about-portrait { max-width: 300px; } }
 
+/* ---- occasion ticker ---- */
+.ticker { overflow: hidden; border-top: 1px solid color-mix(in srgb, var(--brass) 28%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--brass) 28%, transparent); background: var(--paper-2); }
+.ticker-track { display: inline-flex; white-space: nowrap; padding: 0.9rem 0; animation: ticker 38s linear infinite; }
+.ticker-item { display: inline-flex; align-items: center; font-family: var(--font-cormorant), serif;
+  font-size: 1.35rem; color: var(--oxblood); letter-spacing: 0.02em; }
+.ticker-item i { color: var(--brass); font-style: normal; margin: 0 1.4rem; font-size: 0.7rem; }
+@keyframes ticker { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
+
+/* ---- brand meaning ---- */
+.meaning { max-width: 780px; text-align: center; padding: clamp(3.5rem, 7vw, 5.5rem) 24px; }
+.meaning-title { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0.5rem 0 1.25rem; }
+.meaning-title em { font-style: italic; color: var(--brass); }
+.meaning-body { font-size: 1.2rem; line-height: 1.7; color: var(--ink); }
+.meaning-body strong { color: var(--oxblood); font-weight: 600; }
+
+/* ---- collections ---- */
+.collections { padding: 1rem 24px 3.5rem; }
+.collection-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.collection { display: block; text-decoration: none; background: var(--paper-2); border-radius: 4px;
+  padding: 2rem 1.9rem; border-left: 3px solid var(--brass); transition: transform 0.18s ease, box-shadow 0.18s ease; }
+.collection:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(22,58,46,0.12); }
+.collection-eyebrow { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass); font-weight: 700; }
+.collection-title { font-size: 1.8rem; margin: 0.4rem 0 0.5rem; color: var(--ink); }
+.collection-note { color: var(--ink-soft); font-size: 0.98rem; }
+.collection-link { display: inline-block; margin-top: 0.9rem; color: var(--oxblood); font-weight: 600; font-size: 0.9rem; }
+.collection:hover .collection-link { color: var(--brass); }
+@media (max-width: 680px) { .collection-grid { grid-template-columns: 1fr; } }
+
+/* ---- four pillars ---- */
+.pillars { padding: clamp(3rem, 7vw, 5rem) 0; }
+.pillar-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 2rem; }
+.pillar { border-top: 1px solid color-mix(in srgb, var(--brass) 45%, transparent); padding-top: 1rem; }
+.pillar-n { font-family: var(--font-cormorant), serif; font-size: 1.6rem; color: var(--brass-soft); }
+.pillar-title { font-size: 1.6rem; margin: 0.3rem 0 0.5rem; }
+.pillar-body { color: color-mix(in srgb, var(--paper) 80%, transparent); font-size: 0.95rem; }
+@media (max-width: 820px) { .pillar-grid { grid-template-columns: repeat(2, 1fr); gap: 1.75rem; } }
+@media (max-width: 480px) { .pillar-grid { grid-template-columns: 1fr; } }
+
+/* ---- home teaser bands ---- */
+.ethos-teaser-light { max-width: 760px; padding: clamp(3rem, 7vw, 5rem) 24px; }
+.ethos-teaser-light .teaser-title { max-width: 20ch; }
+.about-teaser-band { padding: clamp(3rem, 7vw, 5rem) 0; }
+
 /* ---- section head ---- */
 .catalogue { padding: 2rem 24px 4.5rem; }
 .section-head { margin-bottom: 2rem; }

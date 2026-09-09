@@ -43,6 +43,6 @@ export const nav = [
 export function whatsappLink(productName?: string) {
   const text = productName
     ? `Hi ${site.brand}, I'd like to enquire about the "${productName}" from your catalogue.`
-    : `Hi ${site.brand}, I'd like to enquire about your German silver gifting.`;
+    : `Hi ${site.brand}, I'd like to enquire about your silver gifting.`;
   return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`;
 }

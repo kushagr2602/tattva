@@ -5,7 +5,7 @@ import Photo from "../components/Photo";
 
 export const metadata: Metadata = {
   title: "About — Tattva",
-  description: "Tattva is Stories by Manisha — an artist and chef curating German silver gifting.",
+  description: "Tattva is Stories by Manisha — an artist and chef curating silver gifting.",
 };
 
 export default function AboutPage() {
