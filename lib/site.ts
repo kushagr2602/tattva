@@ -2,7 +2,7 @@
 
 export const site = {
   brand: "Tattva",
-  owner: "Stories by Manisha",
+  owner: "Stories",
   tagline: "Where every gift becomes a story.",
   // Logo file in /public. Save the lotus logo as public/logo.png, it appears
   // automatically. Until the file exists, the "Tattva" wordmark shows instead.
