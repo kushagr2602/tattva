@@ -283,10 +283,9 @@ h1, h2, h3 {
 @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
 
 .card { display: flex; flex-direction: column; }
-.card-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--paper-2); border-radius: 3px; }
-/* portrait / tall photos: the frame sizes to the picture (no fixed ratio, no empty band) */
-.media-contain { aspect-ratio: auto; background: radial-gradient(circle at 50% 40%, #fbf7ef, var(--paper-2)); }
-.media-contain img { padding: 8px; }
+.card-media { position: relative; aspect-ratio: 1 / 1; overflow: hidden; background: var(--paper-2); border-radius: 3px; }
+/* portrait photos sit fully inside the same uniform frame, on a soft ground */
+.media-contain { background: radial-gradient(circle at 50% 40%, #fbf7ef, var(--paper-2)); }
 .plate {
   position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
   background:
@@ -351,7 +350,6 @@ h1, h2, h3 {
 /* ---- product detail ---- */
 .product { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 2rem 24px 4rem; align-items: start; }
 .product-media { position: relative; aspect-ratio: 1; border-radius: 4px; overflow: hidden; background: var(--paper-2); }
-.product-media.media-contain { aspect-ratio: auto; }
 .product-title { font-size: clamp(2rem, 4vw, 3rem); margin: 0.3rem 0 1rem; }
 .product-blurb { font-size: 1.1rem; color: var(--ink); max-width: 52ch; }
 .product-detail { margin: 1.75rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem 1.5rem; }
@@ -432,4 +430,3 @@ h1, h2, h3 {
   outline-offset: 3px;
 }
 .engraved::before, .engraved::after { content: none; }
-.media-contain img { padding: 4px; }

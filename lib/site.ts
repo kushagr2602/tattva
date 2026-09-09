@@ -39,10 +39,15 @@ export const nav = [
   { href: "/contact", label: "Contact" },
 ];
 
-// Prefilled WhatsApp message for a given product (or general enquiry).
-export function whatsappLink(productName?: string) {
-  const text = productName
+// The live site URL (used for WhatsApp link previews and page metadata).
+export const siteUrl = "https://kushagr2602.github.io/tattva";
+
+// Prefilled WhatsApp message. Passing a product URL appends it on its own line, so
+// WhatsApp shows a rich preview (the item's photo) from that page's Open Graph tags.
+export function whatsappLink(productName?: string, productUrl?: string) {
+  let text = productName
     ? `Hi ${site.brand}, I'd like to enquire about the "${productName}" from your catalogue.`
     : `Hi ${site.brand}, I'd like to enquire about your silver gifting.`;
+  if (productUrl) text += `\n${productUrl}`;
   return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`;
 }

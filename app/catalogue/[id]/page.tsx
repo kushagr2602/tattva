@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { products } from "@/lib/products";
-import { getProduct, getProducts } from "@/lib/catalogue";
-import { whatsappLink } from "@/lib/site";
+import { getProduct, getProducts, resolveImage } from "@/lib/catalogue";
+import { whatsappLink, siteUrl } from "@/lib/site";
 import Photo from "../../components/Photo";
 import ProductCard from "../../components/ProductCard";
 import { Motif } from "../../components/decor";
@@ -15,9 +15,18 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
   const p = products.find((x) => x.id === id);
-  return p
-    ? { title: `${p.name} | Tattva`, description: p.blurb }
-    : { title: "Not found | Tattva" };
+  if (!p) return { title: "Not found | Tattva" };
+  const image = resolveImage(p.image); // basePath-prefixed; resolves to absolute via metadataBase
+  return {
+    title: `${p.name} | Tattva`,
+    description: p.blurb,
+    openGraph: {
+      title: `${p.name} — Tattva`,
+      description: p.blurb,
+      url: `${siteUrl}/catalogue/${p.id}/`,
+      images: image ? [{ url: image }] : [],
+    },
+  };
 }
 
 export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
@@ -37,11 +46,8 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
 
       <article className="wrap product">
         <div className={`product-media engraved ${product.fit === "contain" ? "media-contain" : ""}`}>
-          {product.fit === "contain"
-            ? <Photo src={product.image} alt={product.name} block
-                fallback={<div className="plate" aria-hidden><Motif /></div>} />
-            : <Photo src={product.image} alt={product.name} fill
-                fallback={<div className="plate" aria-hidden><Motif /></div>} />}
+          <Photo src={product.image} alt={product.name} fill fit={product.fit}
+            fallback={<div className="plate" aria-hidden><Motif /></div>} />
         </div>
 
         <div className="product-info">
@@ -69,7 +75,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
           </div>
 
           <div className="hero-cta">
-            <a href={whatsappLink(product.name)} target="_blank" rel="noopener" className="btn btn-primary">
+            <a href={whatsappLink(product.name, `${siteUrl}/catalogue/${product.id}/`)} target="_blank" rel="noopener" className="btn btn-primary">
               Enquire on WhatsApp
             </a>
             <Link href="/contact" className="btn btn-ghost btn-ghost-dark">How ordering works</Link>

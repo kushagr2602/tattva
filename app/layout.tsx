@@ -20,6 +20,7 @@ const hanken = Hanken_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kushagr2602.github.io/"),
   title: `${site.brand} | Silver Gifting`,
   description: `${site.tagline}. Silver gifts for Diwali, weddings and everyday occasions.`,
 };
