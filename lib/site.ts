@@ -9,7 +9,7 @@ export const site = {
   logo: "/logo.png",
   // WhatsApp number in international format, digits only (country code + number),
   // e.g. India "91" + number. Used for the "Enquire on WhatsApp" buttons.
-  whatsapp: "919999999999", // TODO: real number
+  whatsapp: "919871161810",
   email: "hello@example.com", // TODO: real email
   city: "India",
   instagram: "", // e.g. "https://instagram.com/tattva", leave "" to hide
