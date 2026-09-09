@@ -21,13 +21,15 @@ export default function Home() {
   const products = getProducts();
   const { logo, heroBg } = getSiteImages();
   const featured = products.slice(0, 6);
+  // Hero backdrop: a real hero.jpg if added, otherwise a styled product photo.
+  const bg = heroBg || products.find((p) => p.id === "peacock-katori-set")?.image || featured[0]?.image || "";
 
   return (
     <>
       {/* ---- hero ---- */}
       <section
-        className={`hero on-dark ${heroBg ? "hero-photo" : ""}`}
-        style={heroBg ? { backgroundImage: `linear-gradient(105deg, rgba(15,42,32,0.94) 30%, rgba(15,42,32,0.55) 100%), url(${heroBg})` } : undefined}
+        className="hero on-dark hero-photo"
+        style={bg ? { backgroundImage: `linear-gradient(105deg, rgba(15,42,32,0.93) 30%, rgba(15,42,32,0.5) 100%), url(${bg})` } : undefined}
       >
         <Toran />
         <div className="wrap hero-grid">
@@ -50,7 +52,10 @@ export default function Home() {
             <p className="hero-note">No fixed prices. Every order is quoted to the package.</p>
           </div>
           <div className="hero-plate" aria-hidden>
-            <Photo src={logo} alt="" width={300} height={300} className="hero-logo" fallback={<Motif />} />
+            <div className="arch-frame">
+              <span className="arch-finial" />
+              <Photo src={logo} alt="Tattva" fallback={<Motif />} />
+            </div>
           </div>
         </div>
       </section>
