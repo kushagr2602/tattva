@@ -145,6 +145,31 @@ h1, h2, h3 {
 .hero-cta { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 1.8rem; }
 .hero-note { margin-top: 1.1rem; font-size: 0.82rem; letter-spacing: 0.02em; color: color-mix(in srgb, var(--paper) 60%, transparent); }
 .hero-plate { display: flex; align-items: center; justify-content: center; }
+
+/* arched temple-frame around the logo */
+.arch-frame {
+  position: relative; width: clamp(200px, 62%, 300px); padding: 4px;
+  background: linear-gradient(160deg, var(--brass-soft), var(--brass));
+  border-radius: 47% 47% 12px 12px / 58% 58% 12px 12px;
+  box-shadow: -8px -8px 18px rgba(255,255,255,0.05), 10px 14px 32px rgba(0,0,0,0.5);
+}
+.arch-frame img { display: block; width: 100%; border-radius: 45% 45% 9px 9px / 56% 56% 9px 9px; }
+.arch-finial { position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  width: 10px; height: 10px; border-radius: 50%; background: var(--brass);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brass) 28%, transparent); }
+
+/* hero product collage (option B) */
+.hero-collage { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.hero-collage img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; box-shadow: 0 10px 26px rgba(0,0,0,0.38); }
+
+/* hero product strip (option C) */
+.hero-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: color-mix(in srgb, var(--brass) 30%, transparent); }
+.hero-strip img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+@media (max-width: 680px) { .hero-strip { grid-template-columns: 1fr 1fr; } }
+
+/* preview page labels */
+.preview-label { background: var(--paper-2); border-top: 3px solid var(--brass); padding: 0.85rem 24px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.8rem; color: var(--oxblood); }
+.preview-label span { color: var(--brass); margin-right: 0.75rem; }
 @media (max-width: 780px) { .hero-grid { grid-template-columns: 1fr; } .hero-plate { margin-top: 0.5rem; } }
 
 /* ---- occasions strip ---- */
