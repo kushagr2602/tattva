@@ -40,7 +40,7 @@ export const nav = [
 ];
 
 // The live site URL (used for WhatsApp link previews and page metadata).
-export const siteUrl = "https://kushagr2602.github.io/tattva";
+export const siteUrl = "https://tattvastories.com";
 
 // Prefilled WhatsApp message. Passing a product URL appends it on its own line, so
 // WhatsApp shows a rich preview (the item's photo) from that page's Open Graph tags.
