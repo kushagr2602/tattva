@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     openGraph: {
       title: `${p.name} — Tattva`,
       description: p.blurb,
-      url: `${siteUrl}/catalogue/${p.id}/`,
+      url: `${siteUrl}/catalogue/${p.id}`,
       images: image ? [{ url: image }] : [],
     },
   };
@@ -80,7 +80,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
 
           <div className="hero-cta">
             <Link
-              href={`/enquire?item=${encodeURIComponent(`${product.name} (${product.code})`)}&url=${encodeURIComponent(`${siteUrl}/catalogue/${product.id}/`)}`}
+              href={`/enquire?item=${encodeURIComponent(`${product.name} (${product.code})`)}&url=${encodeURIComponent(`${siteUrl}/catalogue/${product.id}`)}`}
               className="btn btn-primary">
               Enquire about this
             </Link>
