@@ -1,8 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { site } from "@/lib/site";
+
+// Read ?item= / ?url= once, at first render, without a setState-in-effect.
+function initialParam(key: string): string {
+  if (typeof window === "undefined") return "";
+  return new URLSearchParams(window.location.search).get(key) ?? "";
+}
 
 const OCCASIONS = ["Wedding", "Diwali / Festive", "Rakhi", "Housewarming", "Anniversary", "Naming ceremony", "Corporate / Bulk", "Other"];
 
@@ -15,8 +21,8 @@ function prettyDate(v: string) {
 const BUDGETS = ["Not sure yet", "Under ₹1,000 each", "₹1,000–3,000 each", "₹3,000–5,000 each", "Above ₹5,000 each"];
 
 export default function Enquire() {
-  const [item, setItem] = useState("");
-  const [productUrl, setProductUrl] = useState("");
+  const [item, setItem] = useState(() => initialParam("item"));
+  const [productUrl] = useState(() => initialParam("url"));
   const [name, setName] = useState("");
   const [occasion, setOccasion] = useState("");
   const [quantity, setQuantity] = useState("");
@@ -25,13 +31,6 @@ export default function Enquire() {
   const [storyCard, setStoryCard] = useState(true);
   const [notes, setNotes] = useState("");
   const [err, setErr] = useState("");
-
-  // Prefill the item when arriving from a product page (?item=&url=).
-  useEffect(() => {
-    const q = new URLSearchParams(window.location.search);
-    if (q.get("item")) setItem(q.get("item")!);
-    if (q.get("url")) setProductUrl(q.get("url")!);
-  }, []);
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
