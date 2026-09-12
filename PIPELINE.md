@@ -1,16 +1,26 @@
-# Add-a-product pipeline (the `/admin` page)
+# Inventory pipeline (`/admin`)
 
 Manisha uploads a photo, the AI fills in the details, she edits and hits Publish,
-and the product appears on the site. No coding, no spreadsheet.
+and the product appears on the site. She can also edit or delete any existing
+product from the dashboard. No coding, no spreadsheet.
 
 ## How it works
-- **`/admin`** — a private page (password protected). Upload photo → "Analyze photo with AI"
-  → review/edit the name, category, description, second-life → "Publish".
-- **`/api/analyze`** — Next.js route handler; sends the photo to OpenAI, which suggests the fields.
-- **`/api/publish`** — commits the photo to `public/products/` and adds the item to
-  `content/products.json` in this repo. That commit auto-rebuilds and redeploys on Vercel.
+- **`/admin`** — the dashboard: every product, as a grid of thumbnails. No password to
+  *view* it (it's the same data as the public catalogue). Click any product to edit it.
+- **`/admin/new`** — add a product: upload a photo → "Analyze photo with AI" → review/edit
+  the name, category, description, second-life → "Publish".
+- **`/admin/[id]`** — edit a product: the same form, pre-filled. Replace the photo, change
+  any field, "Save changes" — or "Delete product" to remove it.
+- **`/api/analyze`** — sends a photo to OpenAI, which suggests the fields.
+- **`/api/publish`** — adds a new item: commits its photo to `public/products/` and appends
+  it to `content/products.json`.
+- **`/api/update`** — edits an item's fields, and its photo if a new one is uploaded.
+- **`/api/delete`** — removes an item from `content/products.json` (and best-effort removes
+  its photo).
 
-The public catalogue reads `content/products.json`, so publishing just adds a row there.
+All four API routes require `ADMIN_PASSWORD` in the request. Every one of them is a normal
+git commit to this repo, which auto-rebuilds and redeploys on Vercel. The public catalogue
+reads `content/products.json`, so any change there is the change.
 
 ## Hosting
 The site runs on **Vercel** (free Hobby plan) at **tattvastories.com**. Every push to
