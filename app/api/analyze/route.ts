@@ -1,5 +1,5 @@
 // POST /api/analyze — look at a product photo and suggest listing fields (OpenAI vision).
-// Env: OPENAI_API_KEY, OPENAI_MODEL (default gpt-4o-mini), ADMIN_PASSWORD.
+// Env: OPENAI_API_KEY, OPENAI_MODEL (default gpt-4o; set a newer model here to upgrade), ADMIN_PASSWORD.
 
 export const runtime = "nodejs";
 
@@ -31,7 +31,7 @@ export async function POST(req: Request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: process.env.OPENAI_MODEL || "gpt-4o-mini",
+        model: process.env.OPENAI_MODEL || "gpt-4o",
         max_tokens: 400,
         response_format: { type: "json_object" },
         messages: [
